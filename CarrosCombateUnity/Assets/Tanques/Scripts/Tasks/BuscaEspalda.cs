@@ -13,8 +13,11 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         [Tooltip("Transform del enemigo")]
         public SharedTransform enemyTransform;
 
+        public float coverRad = 5f;
+
         // Component references
         protected UnityEngine.AI.NavMeshAgent navMeshAgent;
+        private Vector3 squadCentre, back, destination, enemyDir;
 
         /// <summary>
         /// Cache the component references.
@@ -27,7 +30,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         public Vector3 centroEquipo(bool incluyeActivo = false)
         {
             Vector3 centre = Vector3.zero;
-            foreach(Transform t in posicionesEscuadron.Value)
+            foreach (Transform t in posicionesEscuadron.Value)
             {
                 if (t != transform)
                     centre += t.position;
@@ -42,7 +45,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
             Vector3 dir = b.position - a;
             Ray ray = new Ray(a, dir);
             RaycastHit hit;
-            if (Physics.Raycast(ray,out hit))
+            if (Physics.Raycast(ray, out hit))
             {
                 return hit.transform == b;
             }
@@ -52,18 +55,18 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         {
             Vector3 pos;
             NavMeshHit hit;
-            Vector3 enemyPos = enemyTransform.Value.position;
             int i = 0;
             do
             {
                 ++i;
                 pos = to + Random.insideUnitSphere * distance;
-                NavMesh.SamplePosition(pos, out hit, 1f, NavMesh.AllAreas);
+                if (!NavMesh.SamplePosition(pos, out hit, coverRad, NavMesh.AllAreas))
+                { Debug.LogError("sampling error"); }
 
-            } while (i<100 && LineOfSight(hit.position+Vector3.up*2f, enemyTransform.Value));
+            } while (i < 100 && LineOfSight(hit.position + Vector3.up * 0.5f, enemyTransform.Value));
             if (i >= 100)
             {
-                Debug.LogError("No funciona er findcover");
+                Debug.LogError("No funciona findcover");
             }
             else
             {
@@ -74,26 +77,22 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         }
         public override TaskStatus OnUpdate()
         {
-            Vector3 centroSquad = centroEquipo();
-            Vector3 dirToEnemy = enemyTransform.Value.position - centroSquad;
-           
+            squadCentre = centroEquipo();
+            enemyDir = enemyTransform.Value.position - squadCentre;
 
-            Ray ray = new Ray(enemyTransform.Value.position,dirToEnemy);
-            Debug.DrawRay(enemyTransform.Value.position,dirToEnemy,Color.red,10);
-            Debug.DrawRay(centroSquad, Vector3.up,Color.yellow,10);
+
+            Ray ray = new Ray(enemyTransform.Value.position, enemyDir);
+            Debug.DrawRay(enemyTransform.Value.position, enemyDir, Color.red, 10);
+            Debug.DrawRay(squadCentre, Vector3.up, Color.yellow, 10);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit,10000f))
+            if (Physics.Raycast(ray, out hit, 10000f))
             {
-                if (LineOfSight(transform.position, enemyTransform.Value))
-                    Debug.Log("aaa");
-                else
-                {
-                    Debug.Log("bbb");
-                }
-
-               GetComponent<NavMeshAgent>().SetDestination(findCoverClose(hit.point,5));
+                back = hit.point;
+                //TODO distinguir entre obstaculos y muros finales
+                destination = findCoverClose(hit.point, coverRad);
+                //GameObject.Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), destination, Quaternion.identity);
+                navMeshAgent.SetDestination(destination);
             }
-
 
             return TaskStatus.Success;
         }
@@ -127,6 +126,13 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         public override void OnBehaviorComplete()
         {
             Stop();
+        }
+
+        public override void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(back, coverRad);
+            Gizmos.DrawWireCube(destination, Vector3.one);
         }
     }
 }
