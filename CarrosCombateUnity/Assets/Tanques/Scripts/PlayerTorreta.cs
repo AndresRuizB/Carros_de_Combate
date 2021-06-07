@@ -9,14 +9,20 @@ public class PlayerTorreta : MonoBehaviour
 
     int bitMask;
 
+    float shotTime;
+
     public int layerMask = 3;
     public Texture2D mouseSkin;
+    public Transform puntoDisparo;
+    public GameObject bullet;
+    public float timeBetweenShots = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         tr = GetComponent<Transform>();
         bitMask = 1 << layerMask;
+        shotTime = timeBetweenShots + 1;
     }
 
     // Update is called once per frame
@@ -31,6 +37,13 @@ public class PlayerTorreta : MonoBehaviour
         }
 
         tr.LookAt(point);
+
+        if (Input.GetMouseButtonDown(0) && shotTime> timeBetweenShots) {
+            Instantiate(bullet, puntoDisparo.position, puntoDisparo.rotation);
+            shotTime = 0;
+        }
+
+        shotTime += Time.deltaTime;
     }
 
 	private void OnDrawGizmos()
