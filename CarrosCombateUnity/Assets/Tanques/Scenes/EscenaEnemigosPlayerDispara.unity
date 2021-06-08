@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899592971801295224, guid: 1bb000b0931204e47b23e2817510082e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0522137
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 899592971801295224, guid: 1bb000b0931204e47b23e2817510082e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899592971801295224, guid: 1bb000b0931204e47b23e2817510082e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.029848099
+      value: -15.17
       objectReference: {fileID: 0}
     - target: {fileID: 899592971801295224, guid: 1bb000b0931204e47b23e2817510082e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -185,6 +185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bb000b0931204e47b23e2817510082e, type: 3}
+--- !u!1 &157526494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 899592971801295227, guid: 1bb000b0931204e47b23e2817510082e, type: 3}
+  m_PrefabInstance: {fileID: 148591617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &171893185
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,9 +201,11 @@ GameObject:
   - component: {fileID: 171893186}
   - component: {fileID: 171893188}
   - component: {fileID: 171893187}
-  m_Layer: 0
+  - component: {fileID: 171893189}
+  - component: {fileID: 171893190}
+  m_Layer: 7
   m_Name: Francotirador
-  m_TagString: Untagged
+  m_TagString: Sniper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,6 +262,38 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &171893189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171893185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5bee3526c815d74fa01d15ace430c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: {fileID: 157526494}
+  nRayos: 80
+  capaParedes: 6
+  capaEnemigos: 7
+  distMaxima: 80
+  distMinima: 1
+  debug: 1
+--- !u!65 &171893190
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171893185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4147205, y: 0.9687203, z: 1.1635504}
+  m_Center: {x: -0.013175964, y: 0.22770542, z: -0.042687893}
 --- !u!1 &363693254
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +900,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 062ba8b886400c940a19c05f8a91ff41, type: 3}
       propertyPath: m_Name
       value: sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 062ba8b886400c940a19c05f8a91ff41, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 062ba8b886400c940a19c05f8a91ff41, type: 3}
@@ -2156,7 +2199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 154308472149158809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pivotCuerpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2222,6 +2265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cuerpo
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c31e86992e76f24897efb772c2e3292, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c31e86992e76f24897efb772c2e3292, type: 3}
 --- !u!1 &7896197582635961452
@@ -2233,7 +2280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2659613928441317324}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pivotTorreta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2249,7 +2296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2464614619559170329}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tanque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
