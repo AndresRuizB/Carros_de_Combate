@@ -12,6 +12,8 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         public SharedTransformList posicionesEscuadron;
         [Tooltip("Transform del enemigo")]
         public SharedTransform enemyTransform;
+        [Tooltip("Variable en la que guardar")]
+        public SharedVector3 posicionEspalda;
 
         public float coverRad = 5f;
 
@@ -54,19 +56,19 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         Vector3 findCoverClose(Vector3 to, float distance)
         {
             Vector3 pos;
-            NavMeshHit hit;
+            NavMeshHit hit = new NavMeshHit();
             int i = 0;
             do
             {
                 ++i;
                 pos = to + Random.insideUnitSphere * distance;
-                if (!NavMesh.SamplePosition(pos, out hit, coverRad, NavMesh.AllAreas))
-                { Debug.LogError("sampling error"); }
 
-            } while (i < 100 && LineOfSight(hit.position + Vector3.up * 0.5f, enemyTransform.Value));
+            } while (i < 100 && (!NavMesh.SamplePosition(pos, out hit, coverRad, NavMesh.AllAreas)
+            || LineOfSight(hit.position + Vector3.up * 0.5f, enemyTransform.Value)));
             if (i >= 100)
             {
                 Debug.LogError("No funciona findcover");
+                NavMesh.SamplePosition(pos, out hit, 5000f, NavMesh.AllAreas);
             }
             else
             {
@@ -91,7 +93,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
                 //TODO distinguir entre obstaculos y muros finales
                 destination = findCoverClose(hit.point, coverRad);
                 //GameObject.Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), destination, Quaternion.identity);
-                navMeshAgent.SetDestination(destination);
+                posicionEspalda.Value = destination;
             }
 
             return TaskStatus.Success;
