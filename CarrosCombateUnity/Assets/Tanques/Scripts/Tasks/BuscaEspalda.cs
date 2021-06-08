@@ -39,20 +39,6 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
             }
             return centre / (float)(posicionesEscuadron.Value.Count - 1);
         }
-
-        // Seek the destination. Return success once the agent has reached the destination.
-        // Return running if the agent hasn't reached the destination yet
-        bool LineOfSight(Vector3 a, Transform b)
-        {
-            Vector3 dir = b.position - a;
-            Ray ray = new Ray(a, dir);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                return hit.transform == b;
-            }
-            return false;
-        }
         Vector3 findCoverClose(Vector3 to, float distance)
         {
             Vector3 pos;
@@ -64,7 +50,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
                 pos = to + Random.insideUnitSphere * distance;
 
             } while (i < 100 && (!NavMesh.SamplePosition(pos, out hit, coverRad, NavMesh.AllAreas)
-            || LineOfSight(hit.position + Vector3.up * 0.5f, enemyTransform.Value)));
+            || CombatUtils.hayLineaVision(hit.position + Vector3.up * 0.5f, enemyTransform.Value)));
             if (i >= 100)
             {
                 Debug.LogError("No funciona findcover");
@@ -72,8 +58,8 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
             }
             else
             {
-                Debug.Log(i);
-                Debug.Log(hit.position);
+                //Debug.Log(i);
+                //Debug.Log(hit.position);
             }
             return hit.position;
         }

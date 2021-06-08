@@ -29,17 +29,6 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 
         // Seek the destination. Return success once the agent has reached the destination.
         // Return running if the agent hasn't reached the destination yet
-        bool LineOfSight(Vector3 a, Transform b)
-        {
-            Vector3 dir = b.position - a;
-            Ray ray = new Ray(a, dir);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit,1000f))
-            {
-                return hit.transform == b;
-            }
-            return false;
-        }
         public override TaskStatus OnUpdate()
         {
             Ray ray = new Ray(enemyTransform.Value.position, Vector3.forward);
@@ -51,7 +40,6 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
                 ray.direction = Quaternion.AngleAxis(stepAngle * i, Vector3.up) * Vector3.forward;
                 if (Physics.Raycast(ray,out hit) && hit.distance > dist)
                 {
-                    Debug.Log($"{i}: {hit.distance}");
                     NavMeshHit navMeshPt;
                     NavMesh.SamplePosition(hit.point, out navMeshPt, 1f,NavMesh.AllAreas);
                     dist = hit.distance;
