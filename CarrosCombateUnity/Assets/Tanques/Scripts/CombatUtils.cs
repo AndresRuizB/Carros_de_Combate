@@ -4,6 +4,21 @@ using UnityEngine;
 
     public static class CombatUtils
     {
+        public static Vector3 centroTransforms(List<Transform> list,Transform excluded=null)
+        {
+            Vector3 centre = Vector3.zero;
+            int i = 0;
+            foreach (Transform t in list)
+            {
+                if (t!=excluded)
+                {
+                    centre += t.position;
+                    ++i;
+                }
+            }
+
+            return centre / i;
+        }
         public static bool hayLineaVision(Vector3 a, Transform b)
         {
             Vector3 dir = b.position - a;

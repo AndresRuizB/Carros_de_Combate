@@ -10,8 +10,12 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
     {
         [Tooltip("Transform del enemigo")]
         public SharedTransform enemyTransform;
-        [Tooltip("Variable en la que guardar")]
-        public SharedVector3 posicionDistancia;
+
+        [Tooltip("Id del tanque")]
+        public SharedInt id;
+        
+        [Tooltip("Id del tanque")]
+        public SharedCanalEscuadron canal;
 
         public int numOfRays = 20;
         private float stepAngle;
@@ -36,7 +40,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
             float dist = float.MinValue;
             Vector3 pos = transform.position;
            for(int i = 0; i < numOfRays; i++)
-            {
+           {
                 ray.direction = Quaternion.AngleAxis(stepAngle * i, Vector3.up) * Vector3.forward;
                 if (Physics.Raycast(ray,out hit) && hit.distance > dist)
                 {
@@ -45,10 +49,9 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
                     dist = hit.distance;
                     pos = navMeshPt.position;
                 }
-            }
-
-            posicionDistancia.Value = pos;
-            return TaskStatus.Success;
+           }
+           canal.Value.objetivosEquipo[id.Value] = pos;
+           return TaskStatus.Success;
         }
 
         /// <summary>

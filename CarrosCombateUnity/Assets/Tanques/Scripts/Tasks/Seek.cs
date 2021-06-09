@@ -13,10 +13,11 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         public SharedFloat angularSpeed = 120;
         [Tooltip("The agent has arrived when the destination is less than the specified amount. This distance should be greater than or equal to the NavMeshAgent StoppingDistance.")]
         public SharedFloat arriveDistance = 0.2f;
+
         [Tooltip("The GameObject that the agent is seeking")]
-        public SharedGameObject target;
-        [Tooltip("If target is null then use the target position")]
-        public SharedVector3 targetPosition;
+        public SharedCanalEscuadron canal;
+
+        [Tooltip("id del tanque")] public SharedInt id;
 
         // Component references
         protected UnityEngine.AI.NavMeshAgent navMeshAgent;
@@ -62,11 +63,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         // Return targetPosition if target is null
         private Vector3 Target()
         {
-            if (target.Value != null)
-            {
-                return target.Value.transform.position;
-            }
-            return targetPosition.Value;
+            return canal.Value.objetivosEquipo[id.Value];
         }
 
         /// <summary>

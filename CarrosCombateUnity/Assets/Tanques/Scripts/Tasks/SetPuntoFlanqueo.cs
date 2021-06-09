@@ -8,12 +8,13 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
     [TaskCategory("Tanks")]
     public class Flanquea : Action
     {
-        [Tooltip("Lista de transforms del escuadron")]
-        public SharedTransformList posicionesEscuadron;
+        [Tooltip("Id del tanque")]
+        public SharedInt id;
         [Tooltip("Transform del enemigo")]
         public SharedTransform enemyTransform;
-        [Tooltip("Variable en la que guardar")]
-        public SharedVector3 posicionEspalda;
+
+        [Tooltip("Canal de voz del tanque")] 
+        public SharedCanalEscuadron canal;
 
         public float coverRad = 5f;
 
@@ -28,17 +29,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         {
             navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         }
-
-        public Vector3 centroEquipo(bool incluyeActivo = false)
-        {
-            Vector3 centre = Vector3.zero;
-            foreach (Transform t in posicionesEscuadron.Value)
-            {
-                if (t != transform)
-                    centre += t.position;
-            }
-            return centre / (float)(posicionesEscuadron.Value.Count - 1);
-        }
+        
         Vector3 findCoverClose(Vector3 to, float distance)
         {
             Vector3 pos;
@@ -65,7 +56,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         }
         public override TaskStatus OnUpdate()
         {
-            squadCentre = centroEquipo();
+            squadCentre = CombatUtils.centroTransforms(canal.Value.transformsEquipo ,transform);
             enemyDir = enemyTransform.Value.position - squadCentre;
 
 
@@ -79,7 +70,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
                 //TODO distinguir entre obstaculos y muros finales
                 destination = findCoverClose(hit.point, coverRad);
                 //GameObject.Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), destination, Quaternion.identity);
-                posicionEspalda.Value = destination;
+                canal.Value.objetivosEquipo[id.Value] = destination;
             }
 
             return TaskStatus.Success;
