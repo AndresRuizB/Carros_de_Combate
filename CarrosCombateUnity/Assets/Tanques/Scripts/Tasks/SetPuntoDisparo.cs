@@ -12,6 +12,8 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         public SharedTransform enemyTransform;
         [Tooltip("Variable en la que guardar")]
         public SharedVector3 posicionDisparo;
+        [Tooltip("Canal de voz del tanque")] public SharedCanalEscuadron canal;
+        [Tooltip("id del tanque")] public SharedInt id;
 
         public int numOfRays = 20;
 
@@ -32,7 +34,8 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         {
            destination = CombatUtils.lineaDeVisionCercana(transform, enemyTransform.Value, numOfRays);
             posicionDisparo.Value = destination;
-            
+            canal.Value.listoParaAtacar(id.Value,Vector3.Distance(transform.position,destination));
+
             return (destination != Vector3.positiveInfinity)?TaskStatus.Success:TaskStatus.Failure;
         }
 
