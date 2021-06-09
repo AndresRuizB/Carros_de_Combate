@@ -63,11 +63,28 @@ public static class CombatUtils
         return closest;
     }
 
-    public static float distanciaNavmesh(Transform desde, Vector3 hasta)
+    public static bool GetPath( NavMeshPath path, Vector3 fromPos, Vector3 toPos, int passableMask )
     {
-        float dist = float.PositiveInfinity;
-
-
-        return dist;
+        path.ClearCorners();
+       
+        if ( NavMesh.CalculatePath( fromPos, toPos, passableMask, path ) == false )
+            return false;
+       
+        return true;
+    }
+       
+    public static float GetPathLength( NavMeshPath path )
+    {
+        float lng = 0.0f;
+       
+        if (( path.status != NavMeshPathStatus.PathInvalid ))
+        {
+            for ( int i = 1; i < path.corners.Length; ++i )
+            {
+                lng += Vector3.Distance( path.corners[i-1], path.corners[i] );
+            }
+        }
+       
+        return lng;
     }
 }
