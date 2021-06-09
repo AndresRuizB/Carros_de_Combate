@@ -36,10 +36,16 @@ public class CanalEscuadron
 		//Cuando suficientes tanques esten listos, se sincronizan
 		if (getListosParaAtacar(out tiempoAtaque) >= minParaAtacar)
 		{
+			Debug.Log($"Atacamos en {tiempoAtaque}");
 			for (var i = 0; i < size; i++)
 			{
 				atacaEn[i] = tiempoAtaque - tiempoParaAtacar[i];
+				Debug.Log($"{i} tarda {tiempoParaAtacar[i]} asi que espera {atacaEn[i]}");
 			}
+		}
+		else
+		{
+			Debug.Log($"{id} a la espera con {tiempoParaAtacar[id]}");
 		}
 	}
 

@@ -5,19 +5,20 @@ using UnityEngine;
 namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 {
     [TaskCategory("Tanks")]
-    public class Seek : Action
+    public class VeAObjetivo : Action
     {
-        [Tooltip("The speed of the agent")]
-        public SharedFloat speed = 10;
-        [Tooltip("The angular speed of the agent")]
-        public SharedFloat angularSpeed = 120;
-        [Tooltip("The agent has arrived when the destination is less than the specified amount. This distance should be greater than or equal to the NavMeshAgent StoppingDistance.")]
-        public SharedFloat arriveDistance = 0.2f;
+        [Tooltip("Velocidad del agente")]
+        public SharedFloat velocidad = 10;
+        [Tooltip("Velocidad angular del agente")]
+        public SharedFloat velocidadAngular = 120;
+        [Tooltip("Distancia a la que consideraremos que hemos llegado al objetivo. Debe superar la del NavMeshAgent")]
+        public SharedFloat distanciaLlegada = 0.2f;
 
         [Tooltip("The GameObject that the agent is seeking")]
         public SharedCanalEscuadron canal;
 
-        [Tooltip("id del tanque")] public SharedInt id;
+        [Tooltip("id del tanque")]
+        public SharedInt id;
 
         // Component references
         protected UnityEngine.AI.NavMeshAgent navMeshAgent;
@@ -35,8 +36,8 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         /// </summary>
         public override void OnStart()
         {
-            navMeshAgent.speed = speed.Value;
-            navMeshAgent.angularSpeed = angularSpeed.Value;
+            navMeshAgent.speed = velocidad.Value;
+            navMeshAgent.angularSpeed = velocidadAngular.Value;
 #if UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_5
             navMeshAgent.Resume();
 #else
@@ -99,7 +100,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
                 remainingDistance = navMeshAgent.remainingDistance;
             }
 
-            return remainingDistance <= arriveDistance.Value;
+            return remainingDistance <= distanciaLlegada.Value;
         }
 
         /// <summary>

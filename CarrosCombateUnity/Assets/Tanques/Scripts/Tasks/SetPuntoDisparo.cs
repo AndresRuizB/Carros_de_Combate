@@ -19,13 +19,15 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 
         // Component references
         private Vector3 destination;
+        // navmeshAgent
+        private NavMeshAgent agent;
 
         /// <summary>
         /// Cache the component references.
         /// </summary>
         public override void OnAwake()
         {
-           
+            agent = GetComponent<NavMeshAgent>();
         }
 
         // Seek the destination. Return success once the agent has reached the destination.
@@ -34,15 +36,13 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         {
            destination = CombatUtils.lineaDeVisionCercana(transform, enemyTransform.Value, numOfRays);
             posicionDisparo.Value = destination;
-            canal.Value.listoParaAtacar(id.Value,Vector3.Distance(transform.position,destination));
+
+            agent.SetDestination(destination);
+            canal.Value.listoParaAtacar(id.Value,agent.remainingDistance/agent.speed);
 
             return (destination != Vector3.positiveInfinity)?TaskStatus.Success:TaskStatus.Failure;
         }
-
-        /// <summary>
-        /// Stop pathfinding.
-        /// </summary>
-
+        
         public override void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
