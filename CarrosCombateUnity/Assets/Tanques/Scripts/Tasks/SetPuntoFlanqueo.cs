@@ -8,10 +8,13 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
     [TaskCategory("Tanks")]
     public class Flanquea : Action
     {
-        [Tooltip("Lista de transforms del escuadron")]
-        public SharedTransformList posicionesEscuadron;
+        [Tooltip("Id del tanque")]
+        public SharedInt id;
         [Tooltip("Transform del enemigo")]
         public SharedTransform enemyTransform;
+
+        [Tooltip("Canal de voz del tanque")] 
+        public SharedCanalEscuadron canal;
 
         public float coverRad = 5f;
 
@@ -26,58 +29,34 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         {
             navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         }
-
-        public Vector3 centroEquipo(bool incluyeActivo = false)
-        {
-            Vector3 centre = Vector3.zero;
-            foreach (Transform t in posicionesEscuadron.Value)
-            {
-                if (t != transform)
-                    centre += t.position;
-            }
-            return centre / (float)(posicionesEscuadron.Value.Count - 1);
-        }
-
-        // Seek the destination. Return success once the agent has reached the destination.
-        // Return running if the agent hasn't reached the destination yet
-        bool LineOfSight(Vector3 a, Transform b)
-        {
-            Vector3 dir = b.position - a;
-            Ray ray = new Ray(a, dir);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                return hit.transform == b;
-            }
-            return false;
-        }
+        
         Vector3 findCoverClose(Vector3 to, float distance)
         {
             Vector3 pos;
-            NavMeshHit hit;
+            NavMeshHit hit = new NavMeshHit();
             int i = 0;
             do
             {
                 ++i;
                 pos = to + Random.insideUnitSphere * distance;
-                if (!NavMesh.SamplePosition(pos, out hit, coverRad, NavMesh.AllAreas))
-                { Debug.LogError("sampling error"); }
 
-            } while (i < 100 && LineOfSight(hit.position + Vector3.up * 0.5f, enemyTransform.Value));
+            } while (i < 100 && (!NavMesh.SamplePosition(pos, out hit, coverRad, NavMesh.AllAreas)
+            || CombatUtils.hayLineaVision(hit.position + Vector3.up * 0.5f, enemyTransform.Value)));
             if (i >= 100)
             {
                 Debug.LogError("No funciona findcover");
+                NavMesh.SamplePosition(pos, out hit, 5000f, NavMesh.AllAreas);
             }
             else
             {
-                Debug.Log(i);
-                Debug.Log(hit.position);
+                //Debug.Log(i);
+                //Debug.Log(hit.position);
             }
             return hit.position;
         }
         public override TaskStatus OnUpdate()
         {
-            squadCentre = centroEquipo();
+            squadCentre = CombatUtils.centroTransforms(canal.Value.transformsEquipo ,transform);
             enemyDir = enemyTransform.Value.position - squadCentre;
 
 
@@ -91,7 +70,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
                 //TODO distinguir entre obstaculos y muros finales
                 destination = findCoverClose(hit.point, coverRad);
                 //GameObject.Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), destination, Quaternion.identity);
-                navMeshAgent.SetDestination(destination);
+                canal.Value.objetivosEquipo[id.Value] = destination;
             }
 
             return TaskStatus.Success;
