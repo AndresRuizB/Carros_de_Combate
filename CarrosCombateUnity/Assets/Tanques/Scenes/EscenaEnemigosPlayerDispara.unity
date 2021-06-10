@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 171893190}
   m_Layer: 7
   m_Name: Francotirador
-  m_TagString: Sniper
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,11 +275,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 157526494}
-  nRayos: 80
+  numRayos: 4
   capaParedes: 6
   capaEnemigos: 7
   distMaxima: 80
   distMinima: 1
+  tagObjetivo: 
   debug: 1
 --- !u!65 &171893190
 BoxCollider:
