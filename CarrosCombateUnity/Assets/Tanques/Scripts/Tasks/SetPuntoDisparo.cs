@@ -42,18 +42,11 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
            if (destination == Vector3.positiveInfinity)
                 return TaskStatus.Failure;
            NavMeshHit hit;
-            // Vector3 v;
-            // if (id.Value == 0)
-            //     v = new Vector3(-15, 0, 15);
-            // else
-            //     v = new Vector3(-11, 0, -4);
-            // NavMesh.SamplePosition(v, out hit, 10f, NavMesh.AllAreas);
-            // destination = hit.position;
-            canal.Value.objetivosEquipo[id.Value] = destination;
+           canal.Value.objetivosEquipo[id.Value] = destination;
 
             NavMeshPath path = new NavMeshPath();
             CombatUtils.GetPath(path, transform.position, destination, NavMesh.AllAreas);
-            canal.Value.listoParaAtacar(id.Value, CombatUtils.GetPathLength(path)/ agent.speed);
+            canal.Value.tiempoParaAtacar[id.Value] = CombatUtils.GetPathLength(path) / agent.speed;
 
             return TaskStatus.Success;
         }
