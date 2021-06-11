@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 171893188}
   - component: {fileID: 171893187}
   - component: {fileID: 171893189}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Francotirador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,12 +225,12 @@ MonoBehaviour:
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(1089.50867,95.07294)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-5.722046E-05,125.833267)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(-160,140)"},"ID":2,"Name":"Return
         Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,110)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.HasReceivedEvent","NodeData":{"Offset":"(-150,119.999939)"},"ID":4,"Name":"Has
         Received Event","Instant":true,"Disabled":true,"SharedStringeventName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Reposition"}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.BuscaDistancia","NodeData":{"Offset":"(42.9419556,125.589417)"},"ID":5,"Name":"Busca
-        Distancia","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":0},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[1,2,3],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"Int32numOfRays":20}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(280,140)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.VeAObjetivo","NodeData":{"Offset":"(-220,160)"},"ID":7,"Name":"Flanquea","Instant":true,"SharedFloatvelocidad":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},"SharedFloatvelocidadAngular":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5},"SharedFloatdistanciaLlegada":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[4,5,6],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.SetPuntoDisparo","NodeData":{"Offset":"(-30.99868,158.328491)"},"ID":8,"Name":"Set
-        Punto Disparo","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":7},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[8,9,10],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1},"SharedTransformpuntoDisparo":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":11},"Int32numOfRays":20},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.GetTiempoAtaque","NodeData":{"Offset":"(164.373627,156.896332)"},"ID":9,"Name":"Get
-        Tiempo Ataque","Instant":true,"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[12,13,14],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1},"SharedFloattiempo":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(371.561676,308.064758)","WatchedFields":["waitTime"]},"ID":10,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.VeAObjetivo","NodeData":{"Offset":"(552.614441,160)"},"ID":11,"Name":"Ve
-        a la posicion de disparo","Instant":true,"SharedFloatvelocidad":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":10},"SharedFloatvelocidadAngular":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":120},"SharedFloatdistanciaLlegada":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[15,16,17],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.DbgShot","NodeData":{"Offset":"(709.477661,161.585449)"},"ID":12,"Name":"Dbg
+        Distancia","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":0},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[1,2,3],"List`1objetivosEquipo":["(2.375379,0.04333341,8.500603)","(-28.5000038,0.04333341,5.290004)","(0,0,0)"],"List`1tiempoParaAtacar":[2.8053813,-1,-1],"List`1atacaEn":[-1,-1,-1]}},"Int32numOfRays":20}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(280,140)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.VeAObjetivo","NodeData":{"Offset":"(-220,160)"},"ID":7,"Name":"Flanquea","Instant":true,"SharedFloatvelocidad":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},"SharedFloatvelocidadAngular":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5},"SharedFloatdistanciaLlegada":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[4,5,6],"List`1objetivosEquipo":["(2.375379,0.04333341,8.500603)","(-28.5000038,0.04333341,5.290004)","(0,0,0)"],"List`1tiempoParaAtacar":[2.8053813,-1,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.SetPuntoDisparo","NodeData":{"Offset":"(-30.99868,158.328491)"},"ID":8,"Name":"Set
+        Punto Disparo","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":7},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[8,9,10],"List`1objetivosEquipo":["(2.375379,0.04333341,8.500603)","(-28.5000038,0.04333341,5.290004)","(0,0,0)"],"List`1tiempoParaAtacar":[2.8053813,-1,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1},"SharedTransformpuntoDisparo":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":11},"Int32numOfRays":8},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.GetTiempoAtaque","NodeData":{"Offset":"(164.373627,156.896332)"},"ID":9,"Name":"Get
+        Tiempo Ataque","Instant":true,"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[12,13,14],"List`1objetivosEquipo":["(2.375379,0.04333341,8.500603)","(-28.5000038,0.04333341,5.290004)","(0,0,0)"],"List`1tiempoParaAtacar":[2.8053813,-1,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1},"SharedFloattiempo":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(371.561676,308.064758)","WatchedFields":["waitTime"]},"ID":10,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.VeAObjetivo","NodeData":{"Offset":"(552.614441,160)"},"ID":11,"Name":"Ve
+        a la posicion de disparo","Instant":true,"SharedFloatvelocidad":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":10},"SharedFloatvelocidadAngular":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":120},"SharedFloatdistanciaLlegada":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[15,16,17],"List`1objetivosEquipo":["(2.375379,0.04333341,8.500603)","(-28.5000038,0.04333341,5.290004)","(0,0,0)"],"List`1tiempoParaAtacar":[2.8053813,-1,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.DbgShot","NodeData":{"Offset":"(709.477661,161.585449)"},"ID":12,"Name":"Dbg
         Shot","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":18}},{"Type":"BehaviorDesigner.Runtime.Tasks.Log","NodeData":{"Offset":"(846.2521,173.083786)"},"ID":13,"Name":"Log","Instant":true,"SharedStringtext":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"SNIPER
-        FIRED"},"SharedBoollogError":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedBoollogTime":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.Descansa","NodeData":{"Offset":"(1000.38647,167.167221)"},"ID":14,"Name":"Descansa","Instant":true,"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[19,20,21],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1}}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"EnMovimiento","IsShared":true,"BooleanmValue":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5}]}'
+        FIRED"},"SharedBoollogError":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedBoollogTime":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.Descansa","NodeData":{"Offset":"(1000.38647,167.167221)"},"ID":14,"Name":"Descansa","Instant":true,"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[19,20,21],"List`1objetivosEquipo":["(2.375379,0.04333341,8.500603)","(-28.5000038,0.04333341,5.290004)","(0,0,0)"],"List`1tiempoParaAtacar":[2.8053813,-1,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1}}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"tankID","IsShared":true,"Int32mValue":1},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"EnMovimiento","IsShared":true,"BooleanmValue":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -271,6 +271,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 171893186}
     m_Modifications:
+    - target: {fileID: 1487008951083271068, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964731943794505545, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2464614619251185083, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -315,9 +323,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4769977532362053931, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531289937864831057, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896197582394493134, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9008910324234324093, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_Name
       value: Tanque
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008910324234324093, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
@@ -523,6 +547,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1285631650}
     m_Modifications:
+    - target: {fileID: 1487008951083271068, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964731943794505545, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2464614619251185083, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -567,9 +599,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4769977532362053931, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531289937864831057, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896197582394493134, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9008910324234324093, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_Name
       value: Tanque
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008910324234324093, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
@@ -1074,7 +1122,7 @@ GameObject:
   - component: {fileID: 1113629316}
   - component: {fileID: 1113629315}
   - component: {fileID: 1113629317}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,7 +1137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113629313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.43, y: 0.3, z: 5.29}
+  m_LocalPosition: {x: 7.06, y: 0.3, z: 7.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3455279379633031369}
@@ -1245,7 +1293,7 @@ GameObject:
   - component: {fileID: 1285631650}
   - component: {fileID: 1285631652}
   - component: {fileID: 1285631651}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Soldado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,7 +1601,7 @@ GameObject:
   - component: {fileID: 1506622217}
   - component: {fileID: 1506622215}
   - component: {fileID: 1506622216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Espia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,13 +1669,13 @@ MonoBehaviour:
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(960.9103,392.288757)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-133.191254,177.326889)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(-159.534912,144.684814)"},"ID":2,"Name":"Return
         Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1.29022026,109.032173)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.HasReceivedEvent","NodeData":{"Offset":"(-179.529541,147.25238)"},"ID":4,"Name":"Has
         Received Event","Instant":true,"Disabled":true,"SharedStringeventName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Reposition"}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.Flanquea","NodeData":{"Offset":"(-23.7634659,142.566528)"},"ID":5,"Name":"Set
-        punto flanqueo","Instant":true,"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0},"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":0},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[1,2,3],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SinglecoverRad":5}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(277.2597,143.545013)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.VeAObjetivo","NodeData":{"Offset":"(-190,140)"},"ID":7,"Name":"Ve
-        A Objetivo","Instant":true,"SharedFloatvelocidad":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},"SharedFloatvelocidadAngular":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5},"SharedFloatdistanciaLlegada":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[4,5,6],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.SetPuntoDisparo","NodeData":{"Offset":"(-53.5342674,135.622009)"},"ID":8,"Name":"Set
-        Punto Disparo","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":7},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[8,9,10],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0},"SharedTransformpuntoDisparo":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":11},"Int32numOfRays":20},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.GetTiempoAtaque","NodeData":{"Offset":"(106.190475,140)"},"ID":9,"Name":"Get
-        Tiempo Ataque","Instant":true,"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[12,13,14],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0},"SharedFloattiempo":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(239.164337,289.325562)","WatchedFields":["waitTime"]},"ID":10,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.VeAObjetivo","NodeData":{"Offset":"(350,140)"},"ID":11,"Name":"Ve
-        A Objetivo","Instant":true,"SharedFloatvelocidad":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},"SharedFloatvelocidadAngular":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5},"SharedFloatdistanciaLlegada":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[15,16,17],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Log","NodeData":{"Offset":"(485.2494,139.754089)"},"ID":12,"Name":"Log","Instant":true,"SharedStringtext":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"SPY
+        punto flanqueo","Instant":true,"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0},"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":0},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[1,2,3],"List`1objetivosEquipo":["(5.753643,0.04333341,13.5)","(-28.337101,0.04333341,5.19178534)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,-1]}},"SinglecoverRad":5}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(277.2597,143.545013)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.VeAObjetivo","NodeData":{"Offset":"(-190,140)"},"ID":7,"Name":"Ve
+        A Objetivo","Instant":true,"SharedFloatvelocidad":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},"SharedFloatvelocidadAngular":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5},"SharedFloatdistanciaLlegada":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[4,5,6],"List`1objetivosEquipo":["(5.753643,0.04333341,13.5)","(-28.337101,0.04333341,5.19178534)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.SetPuntoDisparo","NodeData":{"Offset":"(-53.5342674,135.622009)"},"ID":8,"Name":"Set
+        Punto Disparo","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":7},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[8,9,10],"List`1objetivosEquipo":["(5.753643,0.04333341,13.5)","(-28.337101,0.04333341,5.19178534)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0},"SharedTransformpuntoDisparo":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":11},"Int32numOfRays":8},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.GetTiempoAtaque","NodeData":{"Offset":"(106.190475,140)"},"ID":9,"Name":"Get
+        Tiempo Ataque","Instant":true,"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[12,13,14],"List`1objetivosEquipo":["(5.753643,0.04333341,13.5)","(-28.337101,0.04333341,5.19178534)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0},"SharedFloattiempo":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(239.164337,289.325562)","WatchedFields":["waitTime"]},"ID":10,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.VeAObjetivo","NodeData":{"Offset":"(350,140)"},"ID":11,"Name":"Ve
+        A Objetivo","Instant":true,"SharedFloatvelocidad":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},"SharedFloatvelocidadAngular":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5},"SharedFloatdistanciaLlegada":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[15,16,17],"List`1objetivosEquipo":["(5.753643,0.04333341,13.5)","(-28.337101,0.04333341,5.19178534)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Log","NodeData":{"Offset":"(485.2494,139.754089)"},"ID":12,"Name":"Log","Instant":true,"SharedStringtext":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"SPY
         FIRED"},"SharedBoollogError":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedBoollogTime":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.DbgShot","NodeData":{"Offset":"(619.4249,146.847122)"},"ID":13,"Name":"Dbg
-        Shot","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":18}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.Descansa","NodeData":{"Offset":"(730.1304,153.351013)"},"ID":14,"Name":"Descansa","Instant":true,"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[19,20,21],"List`1objetivosEquipo":["(12.597352,0.04333341,11.3854017)","(Infinity,Infinity,Infinity)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0}}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"EnMovimiento","IsShared":true,"BooleanmValue":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5}]}'
+        Shot","Instant":true,"SharedTransformenemyTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":18}},{"Type":"BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate.Descansa","NodeData":{"Offset":"(730.1304,153.351013)"},"ID":14,"Name":"Descansa","Instant":true,"SharedCanalEscuadroncanal":{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[19,20,21],"List`1objetivosEquipo":["(5.753643,0.04333341,13.5)","(-28.337101,0.04333341,5.19178534)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,0,-1],"List`1atacaEn":[-1,-1,-1]}},"SharedIntid":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0}}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"TankID","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Espera","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"EnMovimiento","IsShared":true,"BooleanmValue":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Velocidad","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"VelocidadAngular","IsShared":true,"SinglemValue":5}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -1695,6 +1743,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1506622214}
     m_Modifications:
+    - target: {fileID: 1487008951083271068, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964731943794505545, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2464614619251185083, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1739,9 +1795,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4769977532362053931, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531289937864831057, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896197582394493134, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9008910324234324093, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_Name
       value: Tanque
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008910324234324093, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
@@ -2299,6 +2371,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 2be5b7235f82aa94a8a7381441c3c987, type: 2}
+    - target: {fileID: 1487008951083271068, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1949429713956877712, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.01
@@ -2322,6 +2398,10 @@ PrefabInstance:
     - target: {fileID: 1949429713956877712, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964731943794505545, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2464614619251185083, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_RootOrder
@@ -2367,10 +2447,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4769977532362053931, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6877969050439988027, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a647c0e5da486d842aa330b3e916f3a9, type: 2}
+    - target: {fileID: 7531289937864831057, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896197582394493134, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8323910210117144964, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2390,6 +2482,10 @@ PrefabInstance:
     - target: {fileID: 9008910324234324093, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
       propertyPath: m_Name
       value: Tanque
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008910324234324093, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9578c76994ab6da489153d9c64fa5961, type: 3}
