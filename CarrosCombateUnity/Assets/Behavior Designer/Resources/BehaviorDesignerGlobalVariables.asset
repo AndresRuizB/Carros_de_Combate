@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mVariableData:
     variableStartIndex: 
-    JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":0},null,null,{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":2,"Int32size":3,"List`1transformsEquipo":[1,2,3],"List`1objetivosEquipo":["(0,0,0)","(0,0,0)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,-1,-1],"List`1atacaEn":[-1,-1,-1],"List`1pideCobertura":[false,false,false]}}]}'
+    JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"enemyTransform","IsShared":true,"IsGlobal":true,"TransformmValue":0},null,null,{"Type":"SharedCanalEscuadron","Name":"canalEscuadron","IsShared":true,"IsGlobal":true,"CanalEscuadronmValue":{"Int32minParaAtacar":3,"Int32size":3,"List`1transformsEquipo":[1,2,3],"List`1objetivosEquipo":["(0,0,0)","(0,0,0)","(0,0,0)"],"List`1tiempoParaAtacar":[-1,-1,-1],"List`1atacaEn":[-1,-1,-1],"List`1pideCobertura":[false,false,false]}}]}'
     fieldSerializationData:
       typeName: []
       fieldNameHash: 
