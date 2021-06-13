@@ -12,7 +12,20 @@ public class CanalEscuadron
 	[SerializeField] public List<Vector3> objetivosEquipo;
 	[SerializeField] public List<float> tiempoParaAtacar;
 	[SerializeField] public List<float> atacaEn;
+	public List<bool> pideCobertura;
 
+	public bool alguienEnPeligro(int id)
+	{
+		int i = 0;
+		while (i < size)
+		{
+			if (i != id && pideCobertura[i])
+				return true;
+			i++;
+		}
+
+		return false;
+	}
 	public int getListosParaAtacar(out float ataqueEn)
 	{
 		var i = 0;
