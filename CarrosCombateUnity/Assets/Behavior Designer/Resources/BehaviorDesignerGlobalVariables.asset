@@ -22,6 +22,9 @@ MonoBehaviour:
       dataPosition: 
       unityObjects:
       - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
       byteData: 
       byteDataArray: 
   mVersion: 1.6.8
