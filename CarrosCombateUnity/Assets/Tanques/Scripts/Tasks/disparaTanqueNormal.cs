@@ -32,9 +32,10 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 		public override TaskStatus OnUpdate()
 		{
 			dirDisparo = enemyTransform.Value.position - transform.position;
+			dirDisparo.y = 0;
 
 			RaycastHit hit = new RaycastHit();
-			Ray rayo = new Ray(transform.position, dirDisparo);
+			Ray rayo = new Ray(transform.position + new Vector3(0,0.8f,0), dirDisparo);
 
 			Debug.Log("comprobando");
 			if (Physics.Raycast(rayo, out hit, 100f, bitMask))

@@ -23,6 +23,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 				torreta.LookAt(torreta.position + dirDisparo.Value);
 
 				GameObject.Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);
+				hayLineaDisparo.SetValue(false);
 			}
 
 			return TaskStatus.Success;
