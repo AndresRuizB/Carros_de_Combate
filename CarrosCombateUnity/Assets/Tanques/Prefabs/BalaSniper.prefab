@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  nRebotes: 2
+  nRebotes: 5
 --- !u!65 &7709511527281196700
 BoxCollider:
   m_ObjectHideFlags: 0

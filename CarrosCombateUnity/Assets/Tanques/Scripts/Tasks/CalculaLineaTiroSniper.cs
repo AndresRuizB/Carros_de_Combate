@@ -20,7 +20,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 		public float distMaxima = 20f;
 		public int numeroRebotes = 1;
 		public float cooldown = 1;
-		
+
 		protected LayerMask bitMCombinada;
 		protected float cooldownActual;
 
@@ -32,7 +32,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 
 		bool calculaRebotes(Transform tirador, Transform objetivo, int nRayos, int nRebotes, out Vector3 direccion)
 		{
-			Vector3 dir = objetivo.position - tirador.position;
+			Vector3 dir = tirador.position - objetivo.position;
 			dir.y *= 0;
 			float incremento = 360f / nRayos;
 			direccion = dir;
@@ -43,6 +43,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 				direccion = dir;
 				if (calcReboteRec(nRebotes, tirador.position, dir, distMaxima, bitMCombinada))
 				{
+					Debug.DrawLine(tirador.position, objetivo.position, Color.red, 0.5f);
 					return true;
 				}
 			}
@@ -59,14 +60,16 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 			if (Physics.Raycast(ray, out hitInfo, distMax, layerM))
 			{
 
+				float distance = (origen - hitInfo.point).magnitude;
+
 				if (hitInfo.transform.gameObject.GetComponent<PlayerMovement>() != null)
 				{
-					Debug.DrawLine(origen, hitInfo.point, Color.green, 0.5f);
+					Debug.DrawLine(origen, hitInfo.point, Color.green, 1f);
 					return true;
 				}
-				else if (rRestantes > 0)
+				else if (rRestantes > 0 && distance > 1f)
 				{
-					Debug.DrawLine(origen, hitInfo.point, Color.red, 0.5f);
+					Debug.DrawLine(origen, hitInfo.point, Color.red, 1f);
 					return calcReboteRec(rRestantes - 1, hitInfo.point, Vector3.Reflect(direccion, hitInfo.normal), distMax, layerM);
 				}
 			}
@@ -84,7 +87,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 				dirDisparo.SetValue(d);
 				cooldownActual = cooldown;
 
-				if (hayLineaDisparo.Value) Debug.DrawLine(transform.position, transform.position + d, Color.blue, 0.5f);
+				if (hayLineaDisparo.Value) Debug.DrawLine(transform.position, transform.position + d, Color.blue, 1f);
 			}
 			else cooldownActual -= Time.deltaTime;
 
