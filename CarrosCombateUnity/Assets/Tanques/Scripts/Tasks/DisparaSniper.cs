@@ -6,13 +6,13 @@ using UnityEngine.AI;
 namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 {
 	[TaskCategory("Tanks")]
-	public class DisparaSniper : Action
+	public class disparaSniper : Action
 	{
 		[Tooltip("bool para el conditional abort")] public SharedBool hayLineaDisparo;
 		[Tooltip("dir en la que disparar")] public SharedVector3 dirDisparo;
 
-		public GameObject balaSniper;
-		public Transform torretaSniper;
+		public GameObject balaPrefab;
+		public Transform torreta;
 		public Transform puntoDisparo;
 
 
@@ -20,9 +20,9 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 		{
 			if (hayLineaDisparo.Value)
 			{
-				torretaSniper.LookAt(torretaSniper.position + dirDisparo.Value);
+				torreta.LookAt(torreta.position + dirDisparo.Value);
 
-				GameObject.Instantiate(balaSniper, puntoDisparo.position, puntoDisparo.rotation);
+				GameObject.Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);
 			}
 
 			return TaskStatus.Success;
