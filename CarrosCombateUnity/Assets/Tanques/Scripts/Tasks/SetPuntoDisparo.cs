@@ -38,7 +38,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
            //destination = CombatUtils.lineaDeVisionCercana(transform, enemyTransform.Value, numOfRays);
            //destination = CombatUtils.puntoCercanoConVision(puntoDisparo.Value, enemyTransform.Value, 10); 
            destination = CombatUtils.lineaVisionEnCamino(transform, enemyTransform.Value);
-           
+
            if (destination == Vector3.positiveInfinity)
                 return TaskStatus.Failure;
            NavMeshHit hit;

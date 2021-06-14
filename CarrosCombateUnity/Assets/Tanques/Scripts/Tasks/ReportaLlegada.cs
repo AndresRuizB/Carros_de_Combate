@@ -26,7 +26,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         // Return running if the agent hasn't reached the destination yet
         public override TaskStatus OnUpdate()
         {
-            canal.Value.listoParaAtacar(id.Value, canal.Value.tiempoParaAtacar[id.Value]/ agent.speed);
+            canal.Value.listoParaAtacar(id.Value, canal.Value.tiempoParaAtacar[id.Value]);
 
             return TaskStatus.Success;
         }

@@ -11,6 +11,8 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 
 		[Tooltip("Transform del enemigo")]
 		public SharedTransform enemyTransform;
+		[Tooltip("Id del tanque")]
+		public SharedInt id;
 
 		public GameObject balaPrefab;
 		public Transform torreta;
@@ -37,17 +39,17 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 			RaycastHit hit = new RaycastHit();
 			Ray rayo = new Ray(transform.position + new Vector3(0,0.8f,0), dirDisparo);
 
-			Debug.Log("comprobando");
+			//Debug.Log("comprobando");
 			if (Physics.Raycast(rayo, out hit, 100f, bitMask))
 			{
 				hayLineaDisparo = hit.transform.gameObject.CompareTag("Player");
-				Debug.Log("disparando" + hit.transform.gameObject.name);
+				//Debug.Log("disparando" + hit.transform.gameObject.name);
 			}
 
 			if (hayLineaDisparo)
 			{
 				torreta.LookAt(torreta.position + dirDisparo);
-				Debug.Log("pium");
+				//Debug.Log("pium " + id);
 				GameObject.Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);
 			}
 

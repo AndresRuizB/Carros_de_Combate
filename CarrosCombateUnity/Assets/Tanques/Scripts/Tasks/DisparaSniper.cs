@@ -14,16 +14,29 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 		public GameObject balaPrefab;
 		public Transform torreta;
 		public Transform puntoDisparo;
+		public float tiempoEntreDisparos = 2f;
 
+		private float tiempoActual;
+		private float tiempoUltimoDisparo;
+
+		public override void OnAwake()
+		{
+			tiempoActual = tiempoEntreDisparos;
+			tiempoUltimoDisparo = 0;
+		}
 
 		public override TaskStatus OnUpdate()
-		{
-			if (hayLineaDisparo.Value)
+		{			
+			Debug.Log("vamo a disparar (si no podemos) " + tiempoActual);
+			if (hayLineaDisparo.Value && Time.time - tiempoUltimoDisparo > tiempoEntreDisparos)
 			{
+				Debug.Log("vemos y podemos hacer pium");
 				torreta.LookAt(torreta.position + dirDisparo.Value);
 
 				GameObject.Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);
 				hayLineaDisparo.SetValue(false);
+				tiempoActual = tiempoEntreDisparos;
+				tiempoUltimoDisparo = Time.time;
 			}
 
 			return TaskStatus.Success;
