@@ -51,11 +51,11 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
         // Return running if the agent hasn't reached the destination yet
         public override TaskStatus OnUpdate()
         {
+            transform.LookAt(navMeshAgent.steeringTarget);
             if (HasArrived())
             {
                 return TaskStatus.Success;
             }
-
             SetDestination(Target());
 
             return TaskStatus.Running;

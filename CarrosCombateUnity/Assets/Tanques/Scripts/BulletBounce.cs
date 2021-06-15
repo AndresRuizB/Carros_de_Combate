@@ -21,7 +21,7 @@ public class BulletBounce : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (rebotesRestantes > 0) {
+        if (rebotesRestantes > 0 && !collision.collider.gameObject.CompareTag("Player")) {
             Vector3 newDir = Vector3.Reflect(velocity, collision.GetContact(0).normal);
             newDir.y = 0;
             velocity = newDir;

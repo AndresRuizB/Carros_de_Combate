@@ -6,7 +6,7 @@ using UnityEngine.AI;
 namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 {
 	[TaskCategory("Tanks")]
-	public class CalculaPosSniper : Action
+	public class MantenDistancia : Action
 	{
 		[Tooltip("Transform del enemigo")] public SharedTransform enemyTransform;
 		[Tooltip("Canal de voz del tanque")] public SharedCanalEscuadron canal;
@@ -14,14 +14,13 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 
 		public float radioMiedoJugador;
 		public float velocidadHuir;
+		public float velocidadAcercarse;
 
 		protected UnityEngine.AI.NavMeshAgent navMeshAgent;
-		protected Vector3 dirMerodeo;
 
 		public override void OnAwake()
 		{
 			navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-			dirMerodeo = Random.insideUnitSphere.normalized;
 		}
 
 		public override TaskStatus OnUpdate()
@@ -36,10 +35,10 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 
 				posicionAMoverse = transform.position + Vector3.RotateTowards(dirAlejarse.normalized * velocidadHuir / distancia, -transform.position, 0.1f, 0);
 			}
-			else {  //Si no merodeamos buscando un buen tiro
-
-				dirMerodeo = Vector3.RotateTowards(dirMerodeo, Random.insideUnitSphere.normalized, 0.0001f, 0); 
-				posicionAMoverse = transform.position + Vector3.RotateTowards(dirMerodeo.normalized, -transform.position, 0.1f, 0);
+			else {  //Si no nos acercaos al jugador
+		
+				Vector3 d = (enemyTransform.Value.position - transform.position).normalized;
+				posicionAMoverse = transform.position + d * velocidadAcercarse;
 			}
 
 			NavMeshHit hit = new NavMeshHit();

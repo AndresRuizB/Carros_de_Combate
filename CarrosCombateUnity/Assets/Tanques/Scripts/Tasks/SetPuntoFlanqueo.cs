@@ -44,7 +44,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
             || CombatUtils.hayLineaVision(hit.position + Vector3.up * 0.5f, enemyTransform.Value)));
             if (i >= 100)
             {
-                Debug.LogError("No funciona findcover");
+                Debug.LogWarning("El espia no encuentra cubierta");
                 NavMesh.SamplePosition(pos, out hit, 5000f, NavMesh.AllAreas);
             }
             else

@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6532964248711119881}
   m_Layer: 0
   m_Name: BalaSniper
-  m_TagString: Untagged
+  m_TagString: BalaRobots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  nRebotes: 2
+  nRebotes: 3
 --- !u!65 &7709511527281196700
 BoxCollider:
   m_ObjectHideFlags: 0

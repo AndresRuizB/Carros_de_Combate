@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Tanques/Scenes/EscenaSoloJugador.unity
+    guid: 3c41f206db9b0064ba2ebc8e9b1f8213
+  - enabled: 1
+    path: Assets/Tanques/Scenes/EscenaFinalMapaAlternativo.unity
+    guid: ee5d7ee0691ff494e8851121eb45a6ba
+  - enabled: 1
+    path: Assets/Tanques/Scenes/EscenaFinal2Soldados.unity
+    guid: c4c179de95b810242b74b371341f52f9
   m_configObjects: {}

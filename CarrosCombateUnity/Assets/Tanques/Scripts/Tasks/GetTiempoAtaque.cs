@@ -21,6 +21,8 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 			tiempo.Value = canal.Value.atacaEn[id.Value];
 			if (tiempo.Value < 0)
 				return TaskStatus.Running;
+				
+
 			return TaskStatus.Success;
 		}
 	}
