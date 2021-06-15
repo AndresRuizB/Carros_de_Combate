@@ -27,10 +27,10 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 
 		public override TaskStatus OnUpdate()
 		{			
-			Debug.Log("vamo a disparar (si no podemos) " + tiempoActual);
+			//Debug.Log("vamo a disparar (si no podemos) " + tiempoActual);
 			if (hayLineaDisparo.Value && Time.time - tiempoUltimoDisparo > tiempoEntreDisparos)
 			{
-				Debug.Log("vemos y podemos hacer pium");
+				//Debug.Log("vemos y podemos hacer pium");
 				torreta.LookAt(torreta.position + dirDisparo.Value);
 
 				GameObject.Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);

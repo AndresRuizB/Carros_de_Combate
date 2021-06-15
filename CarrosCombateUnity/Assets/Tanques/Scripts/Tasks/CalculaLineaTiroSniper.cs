@@ -81,7 +81,7 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 		{
 			if (cooldownActual <= 0f)
 			{
-				Debug.Log("vamo a ver si podemos pium pium");
+				//Debug.Log("vamo a ver si podemos pium pium");
 				Vector3 d = new Vector3();
 
 				hayLineaDisparo.SetValue(calculaRebotes(transform, enemyTransform.Value, numRayos, numeroRebotes, out d));
@@ -91,10 +91,10 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 				if (hayLineaDisparo.Value)
 				{
 					Debug.DrawLine(transform.position, transform.position + d, Color.blue, 1f);
-					Debug.Log("Le vemos al pana");
+					//Debug.Log("Le vemos al pana");
 				}
 			}
-			else Debug.Log("toco esperar  " + cooldownActual + Time.deltaTime);
+			//else Debug.Log("toco esperar  " + cooldownActual + Time.deltaTime);
 			cooldownActual -= Time.deltaTime;
 
 			return TaskStatus.Success;

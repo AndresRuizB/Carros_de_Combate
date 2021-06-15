@@ -43,14 +43,15 @@ namespace BehaviorDesigner.Runtime.Tasks.IAV.CarrosCombate
 			if (Physics.Raycast(rayo, out hit, 100f, bitMask))
 			{
 				hayLineaDisparo = hit.transform.gameObject.CompareTag("Player");
-				//Debug.Log("disparando" + hit.transform.gameObject.name);
+				Debug.Log("disparando" + hit.transform.gameObject.name);
 			}
 
 			if (hayLineaDisparo)
 			{
 				torreta.LookAt(torreta.position + dirDisparo);
-				//Debug.Log("pium " + id);
-				GameObject.Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);
+				Debug.Log("pium " + id);
+				GameObject go = GameObject.Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);
+				Debug.Log("instanciado  " + go.name);
 			}
 
 			return TaskStatus.Success;
