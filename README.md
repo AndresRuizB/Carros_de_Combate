@@ -1,6 +1,13 @@
 # Carros de Combate
 ## Objetivo
 El objetivo de esta demo es crear un equipo de agentes inteligentes (tanques) que compartan información y se sincronicen sin la necesidad de una IA multinivel.
+## Instrucciones
+
+Al haber problemas para guardar variables globales con Behavior Desginer, al abrir *EscenaFinalMapaAlternativo* o *EscenaFinal2Soldados*, será necesario configurar el enemigo y el canal de comunicación de la siguiente manera respectivamente. Al la hora de probar la sincronización, es más interesante la escena con 2 soldados ya que el francotirador opera por libre.
+
+![cfg1](Recursos/configAlt.png)
+![cfg2](Recursos/config2Soldados.png)
+
 ---
 ## El mapa
 Hemos creado un mapa sencillo con cubos, tanto por estética como por rendimiento de los raycast. Al ser un entorno tan sencillo, podemos ser más laxos a la hora de utilizar raycast.
@@ -30,6 +37,8 @@ El francotirador busca la línea de visión más larga con respecto al jugador
 Cuando un tanque esté listo para disparar, se lo comunicará a los demás. Para esta demo hemos decidido que los tanques sólo disparen al jugador cuando dos de ellos puedan hacerlo a la vez, simulando así las estrategias usadas en shooters tácticos (no puedes apuntar a dos enemigos a la vez, así que mejor que huyas y evites el enfrentamiento).
 
 Para coordinar el momento del disparo, los tanques comunican cuánto tardarán en realizar el disparo, así el francotirador podrá esperar a que el espía salga de su cobertura por ejemplo. Puede haber imprecisiones porque no podemos estimar la velocidad de giro ni tener en cuenta la aceleración o frenada, sólo podemos imaginar que el camino por recorrer está en línea recta. Aún así el funcionamiento es satisfactorio en muchas situaciones y mejoraría con un algoritmo de estimación más sofisticado.
+
+Para realizar pruebas con la sincronización, podemos editar *Min para atacar* en la variable global del canal, que es el número de tanques que tendrán que estar en posición para coordinar el ataque. Hay que tener en cuenta que el tanque no opera en sincronía, por lo que un mínimo para atacar de 3 solo funcionará en la escena con un espía y dos soldados.
 
 Aqui podemos observar el funcionamiento esperado (el francotirador dispara desde su posición y el espía sale rápidamente de cobertura)
 ![EjSincro2](Recursos/Sincro2.gif)
