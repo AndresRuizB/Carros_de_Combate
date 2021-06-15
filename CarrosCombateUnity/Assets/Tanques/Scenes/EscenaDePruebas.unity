@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 171893186}
   - component: {fileID: 171893188}
-  - component: {fileID: 171893187}
   - component: {fileID: 171893189}
   - component: {fileID: 171893190}
   m_Layer: 7
@@ -142,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &171893186
 Transform:
   m_ObjectHideFlags: 0
@@ -158,21 +157,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &171893187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171893185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4a22d0237c44a48b171fcdf7b5866d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 963194227}
-  agent: {fileID: 171893188}
-  bt: 2
 --- !u!195 &171893188
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1471,7 +1455,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1285631650}
   - component: {fileID: 1285631652}
-  - component: {fileID: 1285631651}
   - component: {fileID: 1285631653}
   - component: {fileID: 1285631654}
   m_Layer: 7
@@ -1496,21 +1479,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1285631651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285631649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4a22d0237c44a48b171fcdf7b5866d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 963194227}
-  agent: {fileID: 1285631652}
-  bt: 1
 --- !u!195 &1285631652
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1887,7 +1855,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1506622214}
   - component: {fileID: 1506622217}
-  - component: {fileID: 1506622215}
   - component: {fileID: 1506622216}
   m_Layer: 7
   m_Name: Espia
@@ -1895,7 +1862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1506622214
 Transform:
   m_ObjectHideFlags: 0
@@ -1911,21 +1878,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1506622215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506622213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4a22d0237c44a48b171fcdf7b5866d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 963194227}
-  agent: {fileID: 1506622217}
-  bt: 0
 --- !u!114 &1506622216
 MonoBehaviour:
   m_ObjectHideFlags: 0
