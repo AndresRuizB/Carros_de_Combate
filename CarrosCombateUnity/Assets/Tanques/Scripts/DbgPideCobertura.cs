@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using BehaviorDesigner.Runtime;
 using UnityEngine;
-using YamlDotNet.Core.Tokens;
 
 public class DbgPideCobertura : MonoBehaviour
 {
@@ -21,13 +20,13 @@ public class DbgPideCobertura : MonoBehaviour
         if (Input.GetKeyDown(helpKey))
         {
             canal.Value.pideCobertura[id] = true;
-            Debug.Log($"Socorro {id}");
+            //Debug.Log($"Socorro {id}");
         }
 
         if (Input.GetKeyUp(helpKey))
         {
             canal.Value.pideCobertura[id] = false;
-            Debug.Log($"Tamos bien {id}");
+            //Debug.Log($"A salvo {id}");
         }
 
     }
