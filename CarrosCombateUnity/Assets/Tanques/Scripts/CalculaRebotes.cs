@@ -24,7 +24,7 @@ public class CalculaRebotes : MonoBehaviour
 
 	bool calculaRebotes(GameObject tirador, GameObject objetivo, int nRayos, int nRebotes, out Vector3 direccion)
 	{
-		Vector3 dir = objetivo.transform.position - tirador.transform.position;
+		Vector3 dir = -objetivo.transform.position + tirador.transform.position;
 		dir.y *= 0;
 		float incremento = 360f / nRayos;
 		direccion = dir;
@@ -71,7 +71,7 @@ public class CalculaRebotes : MonoBehaviour
 		Vector3 d;
 
 		if (calculaRebotes(this.gameObject, jugador, numRayos, numeroRebotes, out d)) {
-			Debug.DrawRay(new Vector3(0, 1, 0), d, Color.blue);
+			Debug.DrawRay( transform.position + new Vector3(0, 1, 0), d, Color.blue);
 			Debug.Log("adwda");
 		}
 

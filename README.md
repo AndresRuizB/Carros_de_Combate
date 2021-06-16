@@ -1,6 +1,6 @@
 # Carros de Combate
 ## Objetivo
-El objetivo de esta demo es crear un equipo de agentes inteligentes (tanques) que compartan información y se sincronicen sin la necesidad de una IA multinivel.
+El objetivo de esta demo es crear un equipo de agentes inteligentes (tanques) que compartan información, se sincronicen sin la necesidad de una IA multinivel, y supongan un reto entretenido para el jugador.
 ## Instrucciones
 
 Al haber problemas para guardar variables globales con Behavior Desginer, al abrir *EscenaFinalMapaAlternativo* o *EscenaFinal2Soldados*, será necesario configurar el enemigo y el canal de comunicación de la siguiente manera respectivamente. Al la hora de probar la sincronización, es más interesante la escena con 2 soldados ya que el francotirador opera por libre.
@@ -10,14 +10,20 @@ Al haber problemas para guardar variables globales con Behavior Desginer, al abr
 
 ---
 ## El mapa
-Hemos creado un mapa sencillo con cubos, tanto por estética como por rendimiento de los raycast. Al ser un entorno tan sencillo, podemos ser más laxos a la hora de utilizar raycast.
+Hemos creado un par de mapas sencillo con cubos, tanto por estética como por rendimiento de los raycast. Al ser un entorno tan sencillo, podemos ser más laxos a la hora de utilizar raycast.
 
 Tendremos muros (cobre) que actúan como obstáculos y fosos (azules) que impiden el movimiento pero permiten disparar por encima de ellos.
 
-El mapa cuenta con un NavMesh para que los tanques puedan desplazarse sin problema.
-![Mapa](Recursos/mapa.jpg)
+Ambos mapas cuentas con un NavMesh para que los tanques puedan desplazarse sin problema.
+
+![Mapa1](Recursos/mapa1.PNG)
+![Mapa2](Recursos/mapa2.PNG)
+
+---
+
 ## El equipo
 Todos los comportamientos están implementados mediante árboles de comportamiento ajustados a sus personalidades.
+
 ### El espía
 A la hora de flanquear, calcularemos el centro del resto del equipo, aunque podemos excluir a ciertos miembros. Esto significa que a mayor escala podríamos tener varios espías que para este cálculo de flanqueo sólo toman en cuenta a los soldados. 
 
@@ -26,10 +32,26 @@ Tras calcular el centro del equipo con la información que nos proporcionan, ele
 ![EjEspia2](Recursos/Espia2.gif)
 ![EjEspia3](Recursos/EspiaGizmo.gif)
 
-### El francotirador
-El francotirador busca la línea de visión más larga con respecto al jugador
 
 ### El soldado
+El soldado es una unidad de apoyo y, como tal, se intentará mantener cerca del jugador (sin acercarse demasiado) y le disparará siguiendo las normás de sincronización (explicadas más abajo) cuando sus compañeros estén listos. A efectos práctico, esto significa que el soldado siempre resulta una amenaza, pues nos sigue cuando intentamos huir y escapa cuando avanzamos.
+
+### El francotirador
+El francotirador tiene un objetivo: desconcertar y distraer al jugador. Con sus balas que rebotan varias veces más su cuidadoso posicionamiento (a una distancia prudencial del jugador, pero manteniendolo en su línea de tiro), este objetivo está más que asegurado.
+
+Los cálculos de los rebotes se efectuan mediante raycasts de unity. Al ser todo el escenario cubos, estos cálculos son muy eficientes, pudiendo emplear cientos de rayos con varios rebotes sin problema para el rendimiento. Los rebotes como tal se calculan usando una función recursiva que lanza un raycast y, si no impacta con el jugador y quedan botes, se llama a si misma desde el punto de impacto, reflejando el vector direccion del rayo usando la normal de la pared impactada.
+
+Aqui se pueden ver una imagen de los cálculos par 1 rebote. Los primeros rayos que se mandan (en rojo), el rayo que impacta con el jugador (en verde) y la dirección en la cual hay que disparar para que la bala impacte al jugador.
+
+![EjFrancotirador1](Recursos/raycast1.PNG)
+
+Esta imagen es similar pero con 2 rebotes en vez de 1.
+
+![EjFrancotirador2](Recursos/raycast2.PNG)
+
+Cabe también destacar que estos raycast empiezan por el lado contrario al jugador, y siempre se coge el primero que se encuentra, de tal forma que el francotirador prefiere (de forma general) tiros largos con varios rebotes a tiros más directos, como se puede apreciar en la imagen de los 2 rebotes, en la que los rayos dibujados (y por tanto calculados) son los que se encuentran al lado contrario al jugador. También se aprecia bien en esta otra captura, en la que existe línea de visión directa entre ambos tanques, pero la dirección escogida es una que emplea los (3) rebotes para llegar al jugador.
+
+![EjFrancotirador3](Recursos/raycast3.PNG)
 
 ---
 ## Comunicación
